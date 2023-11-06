@@ -31,5 +31,7 @@ int main(int argc, char *argv[]) {
 		perror("exec failed");
 		exit(1);
 	}
+	wait(NULL);
+	wait(NULL);
 	return 0;
 }	
