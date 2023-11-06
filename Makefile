@@ -1,15 +1,15 @@
 CC = gcc
 CFLAGS = -Wall -std=c99 -pedantic
-MAIN = f_test
-OBJS = f_test.o
+MAIN = evens
+OBJS = evens.o
 
 all : $(MAIN)
 
 $(MAIN) : $(OBJS)
 	$(CC) $(CFLAGS) -o $(MAIN) $(OBJS)
 
-f_test.o : f_test.c
-	$(CC) $(CFLAGS) -c f_test.c
+evens.o : evens.c
+	$(CC) $(CFLAGS) -c evens.c
 
 clean :
 	rm *.o $(MAIN) core
