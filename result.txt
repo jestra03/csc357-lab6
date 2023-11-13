@@ -1,4 +1,5 @@
 1
+a.out
 evens
 evens.c
 evens.o

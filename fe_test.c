@@ -20,18 +20,19 @@ int main(int argc, char *argv[]) {
 		perror("exec failed");
 		exit(1);
 	}
-
-	p2 = fork();
-	if (p2 < 0) {
-		perror("Fork failed");
-		return 1;
+	else {
+		p2 = fork();
+		if (p2 < 0) {
+			perror("Fork failed");
+			return 1;
+		}
+		else if (p2 == 0) {
+			execlp("./evens", "./evens", argv[1], NULL);
+			perror("exec failed");
+			exit(1);
+		}
+		wait(NULL);
+		wait(NULL);
 	}
-	else if (p2 == 0) {
-		execlp("./evens", "./evens", argv[1], NULL);
-		perror("exec failed");
-		exit(1);
-	}
-	wait(NULL);
-	wait(NULL);
 	return 0;
 }	
