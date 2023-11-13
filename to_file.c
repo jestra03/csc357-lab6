@@ -6,10 +6,10 @@
 #include <sys/stat.h>
 
 int main(int argc, char *argv[]) {
-	if (argc < 3) {
-		fprintf(stderr, "Not enough arguments\n");
-		return 1;
-	}
+	//if (argc < 3) {
+	//	fprintf(stderr, "Not enough arguments\n");
+	//	return 1;
+	//}
 
 	int fd = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0666);
 	if (fd < 0) {
@@ -23,7 +23,7 @@ int main(int argc, char *argv[]) {
 	}
 	close(fd);
 	execlp(argv[1], argv[1], NULL);
-
+	
 	perror("exec failed");
 	return 1;
 
